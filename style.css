@@ -57,7 +57,7 @@
 
 :root {
     /* full calendar */
-    --fc-small-font-size   : .85em;
+    --fc-small-font-size   : .9em;
     --fc-page-bg-color     : var(--theme-bg-color);
     --fc-neutral-bg-color  : var(--content-bg);
     --fc-neutral-text-color: var(--theme-color);
@@ -73,6 +73,7 @@
 
     --fc-event-bg-color              : var(--content-bg);
     --fc-event-border-color          : var(--content-bg);
+    --fc-event-border-color          : transparent;
     --fc-event-text-color            : var(--theme-color);
     --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
 
