@@ -136,7 +136,7 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
     timeGridWeek: {},
   },
 
-  eventColor: "#D2D8D8",
+  eventColor: "var(--content-bg)",
   nowIndicator: true,
   eventInteractive: true,
   events: [],

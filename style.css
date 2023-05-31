@@ -1,7 +1,9 @@
 /*=============================================
 =            calendar style            =
 =============================================*/
+
 :root {
+    /* dark mode */
     --theme-bg-color     : rgba(16 18 27 / 40%);
     --border-color       : rgba(113 119 144 / 25%);
     --theme-color        : #f9fafb;
@@ -10,6 +12,9 @@
     --hover-menu-bg      : rgba(12 15 25 / 30%);
     --content-title-color: #999ba5;
     --content-bg         : rgb(146 151 179 / 13%);
+    --content-bg-darker  : rgb(146 151 179 / 23%);
+    --content-bg-2       : rgba(213, 217, 217, 0.299);
+
     --button-inactive    : rgb(249 250 251 / 55%);
     --dropdown-bg        : #21242d;
     --dropdown-hover     : rgb(42 46 60);
@@ -17,6 +22,113 @@
     --search-bg          : #14162b;
     --overlay-bg         : rgba(36, 39, 59, 0.3);
     --scrollbar-bg       : rgb(1 2 3 / 40%);
+    /* light mode */
+    --theme-bg-color     : rgb(255 255 255 / 31%);
+    --theme-color        : #3c3a3a;
+    --inactive-color     : #333333;
+    --button-inactive    : #3c3a3a;
+    --search-bg          : rgb(255 255 255 / 31%);
+    --dropdown-bg        : #f7f7f7;
+    --overlay-bg         : rgb(255 255 255 / 30%);
+    --dropdown-hover     : rgb(236 236 236);
+    --border-color       : rgb(255 255 255 / 35%);
+    --popup-bg           : rgb(255 255 255);
+    --hover-menu-bg      : rgba(255 255 255 / 35%);
+    --scrollbar-bg       : rgb(255 253 253 / 57%);
+    --content-title-color: --theme-color;
+
+}
+
+.light-mode {
+    --theme-bg-color     : rgb(255 255 255 / 31%);
+    --theme-color        : #3c3a3a;
+    --inactive-color     : #333333;
+    --button-inactive    : #3c3a3a;
+    --search-bg          : rgb(255 255 255 / 31%);
+    --dropdown-bg        : #f7f7f7;
+    --overlay-bg         : rgb(255 255 255 / 30%);
+    --dropdown-hover     : rgb(236 236 236);
+    --border-color       : rgb(255 255 255 / 35%);
+    --popup-bg           : rgb(255 255 255);
+    --hover-menu-bg      : rgba(255 255 255 / 35%);
+    --scrollbar-bg       : rgb(255 253 253 / 57%);
+    --content-title-color: --theme-color;
+}
+
+:root {
+    /* full calendar */
+    --fc-small-font-size   : .85em;
+    --fc-page-bg-color     : var(--theme-bg-color);
+    --fc-neutral-bg-color  : var(--content-bg);
+    --fc-neutral-text-color: var(--theme-color);
+    --fc-border-color      : var(--border-color);
+
+    --fc-button-text-color         : var(--content-title-color);
+    --fc-button-bg-color           : var(--content-bg);
+    --fc-button-border-color       : var(--border-color);
+    --fc-button-hover-bg-color     : var(--theme-bg-color);
+    --fc-button-hover-border-color : var(--theme-bg-color);
+    --fc-button-active-bg-color    : var(--theme-bg-color);
+    --fc-button-active-border-color: var(--border-color);
+
+    --fc-event-bg-color              : var(--content-bg);
+    --fc-event-border-color          : var(--content-bg);
+    --fc-event-text-color            : var(--theme-color);
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+    --fc-more-link-bg-color  : #d0d0d0;
+    --fc-more-link-text-color: inherit;
+
+    --fc-event-resizer-thickness       : 8px;
+    --fc-event-resizer-dot-total-width : 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+
+    --fc-non-business-color : rgba(215, 215, 215, 0.3);
+    --fc-bg-event-color     : rgb(143, 223, 130);
+    --fc-bg-event-opacity   : 0.3;
+    --fc-highlight-color    : rgba(188, 232, 241, 0.3);
+    --fc-highlight-color    : var(--content-bg);
+    --fc-today-bg-color     : rgba(255, 220, 40, 0.15);
+    --fc-today-bg-color     : var(--content-bg);
+    --fc-now-indicator-color: var(--theme-color);
+
+    --fc-list-event-hover-bg-color: var(--theme-bg-color);
+}
+
+:root {
+    --ed1bg          : #C2D8B9;
+    --ed1text        : #4F6955;
+    --ed2bg          : #D9DBF1;
+    --ed2text        : #5e548e;
+    --ed3bg          : #709775;
+    --ed3text        : var(--fc-event-text-color);
+    --ed4bg          : #A3C0D9;
+    --ed4text        : var(--fc-event-text-color);
+    --ed5bg          : #7a9cc6;
+    --ed5text        : var(--fc-event-text-color);
+    --finalexambg    : #87BBA2;
+    --finalexamtext  : var(--fc-event-text-color);
+    --biwkbg         : #cbacac;
+    --biwktext       : var(--fc-event-text-color);
+    --coursesbg      : var(--fc-event-color);
+    --scribeumiscbg  : #425361;
+    --scribeumisctext: var(--fc-event-text-color);
+    --socalbg        : #b27092;
+    --socaltext      : var(--fc-event-text-color);
+}
+
+::-webkit-scrollbar {
+    width        : 6px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background   : var(--scrollbar-bg);
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
 }
 
 .bg-underlay {
@@ -28,6 +140,7 @@
     top                  : 0;
     height               : 100%;
     width                : 100%;
+    animation            : fadeIn 0.7s 1;
 }
 
 main#cal-wrapper {
@@ -38,6 +151,167 @@ main#cal-wrapper {
     padding : 5px;
 }
 
-#calendar {}
+#calendar {
+    background-color: var(--theme-bg-color);
+    border-radius   : 14px;
+    padding         : 30px;
+    color           : var(--theme-color);
+
+
+}
+
+.fc .fc-col-header-cell-cushion {
+    font-weight: 700;
+}
+
+a {
+    color: var(--theme-color);
+}
+
+.fc .fc-toolbar-title {
+    text-transform: lowercase;
+}
+
+.fc .fc-button {
+    border-radius  : 2em;
+    backdrop-filter: blur(2px);
+}
+
+.fc .fc-button:disabled {
+    opacity       : .4;
+    pointer-events: none;
+}
+
+.fc .fc-view-harness {
+    background-color: var(--theme-bg-color);
+    backdrop-filter : blur(15px);
+    border-radius   : 1.5em;
+    overflow        : hidden;
+
+}
+
+.fc .fc-view-harness-active>.fc-view {
+    /*         padding:1em; */
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border-radius       : 1.5em;
+    border-color        : transparent;
+    /*     padding      : 1em;  */
+
+}
+
+.fc-col-header-cell,
+.fc-multimonth-header,
+.fc .fc-daygrid-day-top,
+.fc-list-day {
+    text-transform: lowercase;
+}
+
+.fc-theme-standard td:last-child,
+.fc-theme-standard th {
+    border-right-color: transparent;
+
+}
+
+.fc-theme-standard .fc-scrollgrid-section-header>th {
+    padding                : 1em;
+    background-color       : var(--theme-bg-color);
+    border-top-right-radius: 1.5em;
+    border-top-left-radius : 1.5em;
+
+}
+
+.fc-toolbar-chunk {
+    display      : flex;
+    align-items  : center;
+    flex-wrap    : wrap;
+    align-content: space-between;
+    justify-content:center;
+    flex-shrink  : 1;
+    gap          : 5px;
+}
+.fc-toolbar-chunk:nth-child(2){
+    flex-shrink:0;
+    padding:10px;
+    
+}
+.fc-toolbar-title{
+    background-color: var(--content-bg);
+    padding:5px 10px;
+    border-radius  : 2em;
+    backdrop-filter:blur(5px);
+    
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc .fc-button-primary:not(:disabled):active:focus,
+.fc .fc-button-primary:focus {
+    box-shadow: none;
+}
+
+.fc .fc-timegrid-slot-label,
+#calendar>div.fc-view-harness.fc-view-harness-active>div>table>tbody>tr:nth-child(1)>td>div>div>div>table>tbody>tr>td.fc-timegrid-axis.fc-scrollgrid-shrink>div {
+    background-color: var(--theme-bg-color);
+    font-size       : 0.85em;
+    font-weight     : 350;
+}
+
+.fc-theme-standard .fc-list {
+    border-color: transparent;
+}
+
+.fc .fc-list-table tbody>tr:first-child th {
+    border-top-right-radius: 1.5em;
+    border-top-left-radius : 1.5em;
+
+}
+
+.fc-timeGrid14Day-view tbody .fc-day-sun,
+.fc-timeGrid14Day-view tbody .fc-day-sat {
+    background-color: var(--content-bg);
+}
+
+tbody tr:first-child .fc-list-day-cushion {
+    border-top-right-radius: 1.5em;
+    border-top-left-radius : 1.5em;
+}
+
+.fc .fc-multimonth {
+    border-color: transparent;
+}
+
+.fc-media-screen .fc-multimonth-singlecol .fc-multimonth-header {
+    backdrop-filter        : blur(105px);
+    border-top-right-radius: 1.5em;
+    border-top-left-radius : 1.5em;
+}
+
+.fc-timegrid-event-harness,
+.fc .fc-daygrid-event-harness {
+    animation: fadeIn 0.35s 1;
+}
+
+.fc-event-main {}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
 
 /*=====  End of calendar style  ======*/
