@@ -12,7 +12,7 @@
     <link rel="icon" href="./favicon_backup.ico" />
     <link
       rel="icon"
-      href="https://raw.githubusercontent.com/selkosaur/sunrisesunset/main/icons/favicon-cookie.png"
+      href="https://cdn-icons-png.flaticon.com/512/10197/10197248.png"
     />
     <!-- fonts links (Source Sans Pro, Assistant, Karla, Alegreya, etc) -->
     <link
@@ -26,16 +26,16 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Title -->
     <title>index / headquarters</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.1/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.5/index.global.min.js"></script>
   </head>
   <body>
-    <header>
-      <h1>cal</h1>
-    </header>
-    <main>
-      <div></div>
+    <section class="bg-underlay"></section>
+    <main id="cal-wrapper">
+      <div id="calendar"></div>
     </main>
     <footer></footer>
     <noscript>Your browser doesn't support JavaScript!</noscript>
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
