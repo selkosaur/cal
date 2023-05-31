@@ -142,3 +142,4 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
   events: [],
   height: "100%",
 });
+calendar.render();
