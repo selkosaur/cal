@@ -36,7 +36,7 @@
     --hover-menu-bg      : rgba(255 255 255 / 35%);
     --scrollbar-bg       : rgb(255 253 253 / 57%);
     --content-title-color: --theme-color;
-
+    --white              : rgba(255, 255, 255, 1);
 }
 
 .light-mode {
@@ -101,20 +101,20 @@
     --ed2bg          : #D9DBF1;
     --ed2text        : #5e548e;
     --ed3bg          : #709775;
-    --ed3text        : var(--fc-event-text-color);
+    --ed3text        : var(--white);
     --ed4bg          : #A3C0D9;
-    --ed4text        : var(--fc-event-text-color);
+    --ed4text        : var(--white);
     --ed5bg          : #7a9cc6;
-    --ed5text        : var(--fc-event-text-color);
+    --ed5text        : var(--white);
     --finalexambg    : #87BBA2;
-    --finalexamtext  : var(--fc-event-text-color);
+    --finalexamtext  : var(--white);
     --biwkbg         : #cbacac;
-    --biwktext       : var(--fc-event-text-color);
+    --biwktext       : var(--white);
     --coursesbg      : var(--fc-event-color);
     --scribeumiscbg  : #425361;
-    --scribeumisctext: var(--fc-event-text-color);
+    --scribeumisctext: var(--white);
     --socalbg        : #b27092;
-    --socaltext      : var(--fc-event-text-color);
+    --socaltext      : var(--white);
 }
 
 ::-webkit-scrollbar {
@@ -214,6 +214,10 @@ a {
 
 }
 
+.fc-header-toolbar {
+    flex-wrap: wrap;
+}
+
 .fc-theme-standard .fc-scrollgrid-section-header>th {
     padding                : 1em;
     background-color       : var(--theme-bg-color);
@@ -223,25 +227,27 @@ a {
 }
 
 .fc-toolbar-chunk {
-    display      : flex;
-    align-items  : center;
-    flex-wrap    : wrap;
-    align-content: space-between;
-    justify-content:center;
-    flex-shrink  : 1;
-    gap          : 5px;
+    display        : flex;
+    align-items    : center;
+    flex-wrap      : wrap;
+    align-content  : space-between;
+    justify-content: center;
+    flex-shrink    : 1;
+    gap            : 5px;
 }
-.fc-toolbar-chunk:nth-child(2){
-    flex-shrink:0;
-    padding:10px;
-    
+
+.fc-toolbar-chunk:nth-child(2) {
+    flex-shrink: 0;
+    padding    : 10px;
+
 }
-.fc-toolbar-title{
+
+.fc-toolbar-title {
     background-color: var(--content-bg);
-    padding:5px 10px;
-    border-radius  : 2em;
-    backdrop-filter:blur(5px);
-    
+    padding         : 5px 10px;
+    border-radius   : 2em;
+    backdrop-filter : blur(5px);
+
 }
 
 .fc .fc-button-primary:not(:disabled).fc-button-active:focus,
