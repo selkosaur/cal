@@ -320,4 +320,8 @@ tbody tr:first-child .fc-list-day-cushion {
     }
 }
 
+.fc-timegrid-event .fc-event-time {
+    font-family: 'glacial_indifferencebold', sans-serif;
+}
+
 /*=====  End of calendar style  ======*/
