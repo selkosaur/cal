@@ -113,6 +113,7 @@
     --biwktext       : var(--white);
     --coursesbg      : var(--fc-event-color);
     --scribeumiscbg  : #425361;
+    --scribeumiscbg  : #4253617d;
     --scribeumisctext: var(--white);
     --socalbg        : #b27092;
     --socaltext      : var(--white);
@@ -129,7 +130,8 @@
 }
 
 body {
-    margin: 0;
+    margin          : 0;
+    background-color: #cbd9e0;
 }
 
 .bg-underlay {
