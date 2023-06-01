@@ -3,6 +3,7 @@
 export const calendarEl = document.getElementById("calendar");
 
 export const calendar = new FullCalendar.Calendar(calendarEl, {
+  googleCalendarApiKey: "AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE",
   initialView: "timeGridWeek",
   editable: true,
   //aspectRatio: 1,
@@ -139,7 +140,8 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
   eventColor: "var(--content-bg)",
   nowIndicator: true,
   eventInteractive: true,
-  events: [],
+  // US Holidays
+
   height: "100%",
 });
 calendar.render();
