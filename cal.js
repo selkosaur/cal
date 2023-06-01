@@ -174,7 +174,7 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
     },
     timeGridWeek: {},
   },
-
+  eventBorderColor: "transparent",
   eventColor: "var(--content-bg)",
   nowIndicator: true,
   eventInteractive: true,
