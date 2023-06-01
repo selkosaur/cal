@@ -327,4 +327,8 @@ tbody tr:first-child .fc-list-day-cushion {
     font-weight: bold;
 }
 
+.fc-timegrid-event-harness-inset .fc-timegrid-event{
+    border-width:0px;
+    
+}
 /*=====  End of calendar style  ======*/
