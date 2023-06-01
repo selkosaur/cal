@@ -1,5 +1,37 @@
 //cal config here
+export async function getapidata(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  const calEvents = await transformEvents(data);
+  loadcalendar(calEvents);
+}
 
+export function loadcalendar(gcalevents) {
+  calendar.addEventSource(gcalevents);
+  calendar.render();
+  /*   console.log('hey');
+  console.log(gcalevents);
+  console.log(calendar.events); */
+}
+
+export const transformEvents = async function (eventdata) {
+  const events = eventdata.items;
+  const calEvents = Array.from(events);
+  calEvents.forEach((event) => {
+    event.start.date ? (event.allDay = true) : (event.allDay = false);
+    event.title = event.summary || event.description;
+    if (event.iCalUID) {
+      event.iCalUID.indexOf("humanity") > -1
+        ? (event.title = event.description.replace("--", "").trim())
+        : (event.title = event.summary);
+    }
+    event.start = event.start.date || event.start.dateTime;
+    event.end = event.end.date || event.end.dateTime;
+  });
+  console.log(calEvents);
+  return { id: eventdata.summary, events: calEvents };
+};
 export const calendarEl = document.getElementById("calendar");
 
 export const calendar = new FullCalendar.Calendar(calendarEl, {
@@ -145,3 +177,7 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
   height: "100%",
 });
 calendar.render();
+
+export const usholidays = `https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday%40group.v.calendar.google.com/events?key=AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE&timeMin=2023-01-01T00%3A00%3A00-04%3A00&timeMax=2023-12-31T00%3A00%3A00-04%3A00&singleEvents=true&maxResults=9999`;
+
+getapidata(usholidays);
