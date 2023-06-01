@@ -30,7 +30,13 @@ export const transformEvents = async function (eventdata) {
     event.end = event.end.date || event.end.dateTime;
   });
   console.log(calEvents);
-  return { id: eventdata.summary, events: calEvents };
+  return {
+    id: eventdata.summary,
+    events: calEvents,
+    classNames: [
+      "cal-" + eventdata.summary.slice(0, 4).replace(" ", "").toLowerCase(),
+    ],
+  };
 };
 export const calendarEl = document.getElementById("calendar");
 
