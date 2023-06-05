@@ -39,7 +39,7 @@ export const transformEvents = async function (eventdata) {
   };
 };
 export const calendarEl = document.getElementById("calendar");
-
+export var Draggable = FullCalendar.Draggable;
 export const calendar = new FullCalendar.Calendar(calendarEl, {
   googleCalendarApiKey: "AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE",
   initialView: "timeGridWeek",
@@ -179,11 +179,24 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
   nowIndicator: true,
   eventInteractive: true,
   droppable: true,
+  drop: function (eventinfo) {
+    //
+  },
   // US Holidays
 
   height: "100%",
 });
 calendar.render();
+let newEvSidebar = document.querySelector(".newev-sidebar");
+new Draggable(newEvSidebar, {
+  itemSelector: ".new-event",
+  eventData: function (eventEl) {
+    return {
+      title: eventEl.innerText,
+      // duration: "02:00",
+    };
+  },
+});
 
 export const usholidays = `https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday%40group.v.calendar.google.com/events?key=AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE&timeMin=2023-01-01T00%3A00%3A00-04%3A00&timeMax=2023-12-31T00%3A00%3A00-04%3A00&singleEvents=true&maxResults=9999`;
 

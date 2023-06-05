@@ -147,11 +147,13 @@ body {
 }
 
 main#cal-wrapper {
-    position: absolute;
-    bottom  : 0;
-    width   : 100%;
-    height  : 100%;
-    padding : 5px;
+    position             : absolute;
+    bottom               : 0;
+    width                : 100%;
+    height               : 100%;
+    padding              : 5px;
+    display              : grid;
+    grid-template-columns: 25% auto;
 }
 
 #calendar {
@@ -327,8 +329,21 @@ tbody tr:first-child .fc-list-day-cushion {
     font-weight: bold;
 }
 
-.fc-timegrid-event-harness-inset .fc-timegrid-event{
-    border-width:0px;
-    
+.fc-timegrid-event-harness-inset .fc-timegrid-event {
+    border-width: 0px;
+
 }
+
+.newev-sidebar {
+    /**/
+}
+
+.new-event {
+    cursor: grab;
+}
+
+.new-event:active {
+    cursor: grabbing;
+}
+
 /*=====  End of calendar style  ======*/
