@@ -178,6 +178,7 @@ export const calendar = new FullCalendar.Calendar(calendarEl, {
   eventColor: "var(--content-bg)",
   nowIndicator: true,
   eventInteractive: true,
+  droppable: true,
   // US Holidays
 
   height: "100%",
