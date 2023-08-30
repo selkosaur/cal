@@ -347,4 +347,8 @@ tbody tr:first-child .fc-list-day-cushion {
     box-shadow: none;
 }
 
+.fc-daygrid-event {
+    border-radius: 0.6rem;
+}
+
 /*=====  End of calendar style  ======*/
